@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="col-12">
+    <h5 class="form-title"><span>Update Dealer Details</span></h5>
+    </div>
+        
+    
+        
+    {% for i in a %}
+      
+    
+    <form action="/Admin/deal/dealer_update/{{i.id}}/" method="post">
+
+        {% csrf_token %}
+    
+   
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_authorized_distributor">Authorized distributor:</label>
+        {% comment %} <select name="authorized_distributor" class="form-select" id="id_authorized_distributor">
+         <option value="1" selected>{{i.authorized_distributor}}</option> {% endcomment %}
+
+         {{a_user}}
+    
+     
+    
+    </select> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_Business_Name">Business Name:</label> <input type="text" name="Business_Name" class="form-control" maxlength="50" required id="id_Business_Name" value="{{i.Business_Name}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_Mobile_No">Mobile No:</label> <input type="number" name="Mobile_No" class="form-control" id="id_Mobile_No" value="{{i.Mobile_No}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_Whatsapp_No">Whatsapp No:</label> <input type="text" name="Whatsapp_No" class="form-control"  value="{{i.Whatsapp_No}}"> 
+
+        <label for="id_Whatsapp_No">Whatsapp No:</label> <input type="number" name="Whatsapp_No" class="form-control" id="id_Whatsapp_No" value="{{i.Whatsapp_No}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_Address">Address:</label> <input type="text" name="Address" class="form-control" maxlength="100" required id="id_Address" value="{{i.Address}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_District">District:</label> <input type="text" name="District" class="form-control" maxlength="30" required id="id_District" value="{{i.District}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_Pin_code">Pin code:</label> <input type="number" name="Pin_code" class="form-control" id="id_Pin_code" value="{{i.Pin_code}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_Gst_No">Gst No:</label> <input type="text" name="Gst_No" class="form-control" maxlength="30" id="id_Gst_No" value="{{i.Gst_No}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="form-group">
+    
+        <label for="id_Seed_License">Seed License:</label> <input type="text" name="Seed_License" class="form-control" maxlength="30" id="id_Seed_License" value="{{i.Seed_License}}"> 
+    
+    </div>
+    
+    
+    
+    <div class="col-12">
+    <button type="submit" class="btn btn-primary">Update Dealer</button>
+    </div>
+     <br>
+    
+    </form>
+
+
+    {% endfor %}
+
+{% endblock %}
+    

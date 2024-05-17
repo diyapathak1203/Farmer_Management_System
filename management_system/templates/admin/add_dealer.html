@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+<div class="col-sm-12">
+<div class="card">
+<div class="card-body">
+
+    {% csrf_token %}
+<div class="col-12">
+<h5 class="form-title"><span>Add Dealer</span></h5>
+</div>
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'error' %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+  {% comment %} <div class="form-group">
+<label>Authorized Distributor</label>
+<input type="text" class="form-control" name="authorized_distributor">
+</div> {% endcomment %}
+
+<form action="/Admin/deal/dealer_form/" method="post">
+
+{% csrf_token %}
+
+{% for i in a %}
+
+<div class="form-group">
+
+    {{i.label_tag}} {{i}} {{i.error | striptags}}
+
+</div>
+
+{% endfor %}
+
+<div class="col-12">
+<button type="submit" class="btn btn-primary">Add Dealer</button>
+</div>
+ <br>
+
+</form>
+
+{% comment %} 
+
+<div class="form-group">
+<label>Dealer Name</label>
+<input type="text" class="form-control" name="dealer_name">
+</div>
+
+<div class="form-group">
+<label>Mobile Number</label>
+<input type="number" class="form-control" name="mobile_no" value="{{user.mobile_no}}">
+</div>
+
+    <div class="form-group">
+    <label>Whatsapp Number</label>
+    <input type="number" class="form-control" name="whatsapp_no" value="{{user.whatsapp_no}}">
+    </div>
+
+    <div class="form-group">
+    <label>Address</label>
+    <input type="text" class="form-control" name="address" value="{{user.address}}">
+    </div>
+
+<div class="form-group">
+<label>District</label>
+<input type="text" class="form-control" name="district" value="{{user.district}}">
+</div>
+
+<div class="form-group">
+<label>Pincode</label>
+<input type="number" maxlength="6" class="form-control" name="pincode">
+</div>
+
+<div class="form-group">
+<label>GST Number</label>
+<input type="number" maxlength="15" class="form-control" name="gst_no">
+</div>
+
+  <div class="form-group">
+<label>Seed License Number</label>
+<input type="number" class="form-control" name="seed_license">
+</div> {% endcomment %}
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

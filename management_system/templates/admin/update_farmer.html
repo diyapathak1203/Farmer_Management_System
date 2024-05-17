@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    
+{% for i in a %}
+
+
+<form  action="/Admin/farm/farmer/update/{{i.id}}/" method="post">
+    
+    {% csrf_token %}
+    
+<div class="col-12">
+<h5 class="form-title"><span>Update Farmer Details</span></h5>
+</div>
+
+
+  <div class="form-group">
+
+        <label for="id_Name">Name:</label>  <input type="text" name="Name" class="form-control" required id="id_Name" value = {{i.Name}}>  
+         
+    </div>
+
+    
+
+    <div class="form-group">
+
+        <label for="id_Mobile_NO">Mobile no:</label>  <input type="number" name="Mobile_NO" class="form-control" required id="id_Mobile_NO" value = {{i.Mobile_No}}>  
+         
+    </div>
+
+    
+
+    <div class="form-group">
+
+        <label for="id_Whatsapp_No">Whatsapp no:</label>  <input type="text" name="Whatsapp_No" class="form-control" value = {{i.Whatsapp_No}}>  
+
+        <label for="id_Whatsapp_No">Whatsapp no:</label>  <input type="number" name="Whatsapp_No" class="form-control" required id="id_Whatsapp_No" value = {{i.Whatsapp_No}}>  
+
+         
+    </div>
+
+    
+
+    <div class="form-group">
+
+        <label for="id_Village">Village:</label>  <input type="text" name="Village" class="form-control" required id="id_Village" value = {{i.Village}}>  
+         
+    </div>
+
+    
+
+    <div class="form-group">
+
+        <label for="id_District">District:</label>  <input type="text" name="District" class="form-control" required id="id_District" value = {{i.District}}>  
+         
+    </div>
+
+    
+
+    <div class="form-group">
+
+        <label for="id_Pin_code">Pin code:</label>  <input type="number" name="Pin_code" class="form-control" required id="id_Pin_code" value = {{i.Pin_code}}>  
+         
+    </div>
+
+    
+
+
+    <div class="col-12">
+<button type="submit" class="btn btn-primary">Update Farmer</button>
+    </div>
+    <br>
+
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+<div class="content container-fluid">
+   {% block content %}
+               <div class="page-header">
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <h3><strong>Welcome <span> {{request.user}} !</span></strong></h3>
+                        
+                     <br>
+                        <div class="row">
+                           <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                              <div class="card bg-one w-100">
+                                 <div class="card-body">
+                                    <div class="db-widgets d-flex justify-content-between align-items-center">
+                                       <div class="db-icon">
+                                          <i class="fas fa-user"></i>                                       
+                                       </div>
+                                       <div class="db-info">
+                                          <h3>{{farmer_count}}</h3>
+                                          <h6>Our Farmers</h6>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                              <div class="card bg-two w-100">
+                                 <div class="card-body">
+                                    <div class="db-widgets d-flex justify-content-between align-items-center">
+                                       <div class="db-icon">
+                                          <i class="fas fa-user"></i>
+                                       </div>
+                                       <div class="db-info">
+                                          <h3>{{distributor_count}}</h3>
+                                          <h6>Our Dealers</h6>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                              <div class="card bg-three w-100">
+                                 <div class="card-body">
+                                    <div class="db-widgets d-flex justify-content-between align-items-center">
+                                       <div class="db-icon">
+                                          <i class="fas fa-user"></i>
+                                       </div>
+                                       <div class="db-info">
+                                          <h3>{{dealer_count}}</h3>
+                                          <h6>Our Distributors</h6>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                              <div class="card bg-four w-100">
+                                 <div class="card-body">
+                                    <div class="db-widgets d-flex justify-content-between align-items-center">
+                                       <div class="db-icon">
+                                          <i class="fas fa-user"></i>
+                                       </div>
+                                       <div class="db-info">
+                                          <h3>{{employee_count}}</h3>
+                                          <h6>Our Employees</h6>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <a class="logo logo-small">
+                           <img src="{% static 'assets/img/dashboard-image.png' %}"  width="100%" height="70%">
+                           </a>
+                       
+
+                        
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+
+   </div>
+
+{% include 'includes/chart.html' %}    
+   {% endblock %}
+

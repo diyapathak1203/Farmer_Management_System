@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+<div class="col-sm-12">
+<div class="card">
+<div class="card-body">
+<form  action="/Admin/farm/farmer_form/" method="post">
+    {% csrf_token %}
+<div class="col-12">
+<h5 class="form-title"><span>Add Farmer</span></h5>
+</div>
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'error' %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+
+    {% for i in farmer %}
+
+    <div class="form-group">
+
+        {{i.label_tag}}  {{i}}  {{i.error | striptags}}
+         {% comment %} <label>Farmer Name</label>
+         <input type="text" class="form-control" name="farmer_name"> {% endcomment %}
+    </div>
+
+    {% endfor %}
+
+{% comment %} <div class="form-group">
+<label>Mobile Number</label>
+<input type="number" class="form-control" name="mobile_no">
+</div>
+
+    <div class="form-group">
+    <label>Whatsapp Number</label>
+    <input type="number" class="form-control" name="whatsapp_no" >
+    </div>
+
+    <div class="form-group">
+    <label>Village</label>
+    <input type="text" class="form-control" name="village">
+    </div>
+
+<div class="form-group">
+<label>District</label>
+<input type="text" class="form-control" name="district">
+</div>
+
+<div class="form-group">
+<label>Pincode</label>
+<input type="number" maxlength="6" class="form-control" name="pincode">
+</div>
+</div> {% endcomment %}
+    <div class="col-12">
+<button type="submit" class="btn btn-primary">Add Farmer</button>
+    </div>
+    <br>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

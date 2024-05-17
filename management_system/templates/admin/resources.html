@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <div class="content container-fluid">
+       <div class="page-header">
+          <div class="row align-items-center">
+             <div class="col">
+                <h3 class="page-title">Resources</h3>
+                <ul class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                   <li class="breadcrumb-item active">Resources</li>
+                </ul>
+             </div>
+             <div class="col-auto text-right float-right ml-auto">
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-sm-12">
+             <div class="card card-table">
+                <div class="card-body">
+                   <div class="table-responsive">
+                      <table id="table_id" class="table table-hover table-center mb-0">
+                         <thead>
+                            <tr>
+                               <th>Resource Name</th>
+                               <th class="text-right">Action</th>
+                            </tr>
+                         </thead>
+
+                         {% for i in a %}
+                         <tbody>
+                            <tr>
+      
+                               <td><a href="{{fileUrl}}">{{fileName}}</a>Price List - Hybrid Vegetables</td>
+                               <td class="text-right">
+                                  <div class="actions">
+                                    <a href="{{i.hybrid_vegitable_price.url}}" class="btn btn-outline-primary mr-2" download><i class="fas fa-download"></i>Download</a>
+                                  </div>
+                               </td>
+                            </tr>
+
+                            <tr>
+                                <td>Price List - OP Vegetables</td>
+                                <td class="text-right">
+                                   <div class="actions">
+                                     <a href="{{i.price_list.url}}" class="btn btn-outline-primary mr-2" download><i class="fas fa-download"></i> Download</a>
+                                   </div>
+                                </td>
+                             </tr>
+
+                             <tr>
+                                <td>Catalogue 2023</td>
+                                <td class="text-right">
+                                   <div class="actions">
+                                     <a href="{{i.catalogue.url}}" class="btn btn-outline-primary mr-2" download><i class="fas fa-download"></i> Download</a>
+                                   </div>
+                                </td>
+                             </tr>
+
+                         </tbody>
+                         {% endfor %}
+                      </table>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    {% endblock %}
+
+
+ 
